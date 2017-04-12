@@ -1,7 +1,7 @@
 <ul>
-  <li ng-repeat="row in board.Spaces">
+  <li ng-repeat="row in board.Spaces" class="row">
     <ul>
-      <li ng-repeat="cell in row" ng-bind="cell.X + ',' + cell.Y" ></li>
+      <li ng-repeat="cell in row" ng-bind="cell.X + ',' + cell.Y" class="column"></li>
     </ul>
   </li>
 </ul>
