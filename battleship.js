@@ -51,3 +51,19 @@ function Board() {
 	}
 
 }
+
+function Player(myBoard, yourBoard, id) {
+	this.myBoard = myBoard;
+	this.yourBoard = yourBoard;
+	this.id = id;
+	this.isTurn = false;
+	
+	this.hasLost = function() {
+		for (var i = 0; i < this.myBoard.ships.length; i++) {
+			if (!this.myBoard.ships[i].isSunk()) {
+				return false;
+			}
+		}
+		return true;
+	} 
+}
