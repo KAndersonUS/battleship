@@ -4,7 +4,6 @@
   app.controller('MainCtrl', ['Board', function(Board){
     this.Message = "Battleship";
     this.Board = new Board();
-    console.log(this.Board);
   }]);
   app.factory('Board', ['Piece', function(Piece){
     var Board = function(){
@@ -31,4 +30,15 @@
     };
     return Piece;
   }]);
+  app.directive('battleshipBoard', function(){
+    return {
+      scope: {
+        board: '=battleshipBoard'
+      },
+      link: function(scope, elem, attrs, ctrl){
+        console.log('here');
+      },
+      templateUrl: "/scripts/templates/board.tmpl.html"
+    }
+  });
 })();
