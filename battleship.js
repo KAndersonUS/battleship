@@ -24,4 +24,30 @@ function Ship(length) {
 		}
 		return false;
 	}
+	this.isSunk = function() {
+		for (var i =0; i < this.length; i++) {
+			if(this.hits[i] !== true) {
+				return false;
+			}
+		}
+		return true;
+	}
+}
+
+function Board() {
+	this.ships = [];
+	this.ships.push(new Ship(5));
+	this.ships.push(new Ship(4));
+	this.ships.push(new Ship(3));
+	this.ships.push(new Ship(3));
+	this.ships.push(new Ship(2));
+
+	this.misses = [];
+	for(var i = 0; i < 10; i++) {
+		this.misses[i] = [];
+		for(var j = 0; j < 10; j++) {
+			this.misses[i][j] = false;
+		}
+	}
+
 }
