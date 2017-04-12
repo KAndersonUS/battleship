@@ -1,0 +1,7 @@
+<ul>
+  <li ng-repeat="row in board.Spaces">
+    <ul>
+      <li ng-repeat="cell in row" ng-bind="cell.X + ',' + cell.Y" ></li>
+    </ul>
+  </li>
+</ul>
